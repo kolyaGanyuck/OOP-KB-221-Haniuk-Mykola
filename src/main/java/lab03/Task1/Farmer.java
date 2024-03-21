@@ -67,7 +67,6 @@ public class Farmer {
                     }
                 }
             }
-
         }
         return "Худоба перегнана";
     }

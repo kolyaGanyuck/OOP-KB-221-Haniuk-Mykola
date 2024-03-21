@@ -15,8 +15,5 @@ public class Animal {
         this.currentId = id++;
     }
 
-    public Animal(){
-
-    }
 
 }
