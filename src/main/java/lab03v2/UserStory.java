@@ -21,7 +21,6 @@ public class UserStory extends Ticket {
 
     @Override
     public void complete() {
-        dependencies.get(0).completeUserStory();
         for (Ticket ticket : dependencies) {
             if (!ticket.isCompleted()) {
                 System.out.println("Not all user's dependencies are complete");
@@ -29,7 +28,7 @@ public class UserStory extends Ticket {
             }
             System.out.println("User with id " + userId + " complete dependency + " + ticket.getName());
         }
-        userStoryComplete = true;
+        userStoryComplete = true; // check how work
     }
 
     public void completeUserStory() {
