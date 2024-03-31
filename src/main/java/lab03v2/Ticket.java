@@ -22,12 +22,6 @@ public class Ticket {
         System.out.println("Ticket with name " + name + " is completed");
     }
 
-    public boolean isCompeted() {
-        return isCompleted;
-    }
-    public static int getId() {
-        return id;
-    }
     Ticket(){
 
     }

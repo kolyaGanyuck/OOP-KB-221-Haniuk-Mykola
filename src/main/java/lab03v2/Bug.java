@@ -17,7 +17,7 @@ public class Bug extends Ticket {
             bug.setEstimate(estimate);
             bug.setUS(userStory);
             bug.setBugIsComplete(false);
-            System.out.println("Bug створено");
+            System.out.println("Bug is create");
             return bug;
         }
     }

@@ -8,8 +8,7 @@ public class Sprint {
     private int sprintEstimate;
 
     private List<Ticket> ticketList = new ArrayList<>();
-    private List<Ticket> userStories = new ArrayList<>();
-    private List<Ticket> bugList = new ArrayList<>();
+
 
     Sprint(int maxTickets, int sprintEstimate){
         this.maxTickets = maxTickets;
@@ -25,16 +24,16 @@ public class Sprint {
     }
 
     public boolean addUserStory(UserStory userStory) {
-        if (userStory != null && !userStory.isUserStoryComplete()) {
-            userStories.add(userStory);
+        if (userStory != null && !userStory.isUserStoryComplete() && ticketList.size() < maxTickets) {
+            ticketList.add(userStory);
             return true;
         }
         return false;
     }
 
     public boolean addBug(Bug bugReport) {
-        if (bugReport != null && !bugReport.isBugIsComplete()) {
-            bugList.add(bugReport);
+        if (bugReport != null && !bugReport.isBugIsComplete() && ticketList.size() < maxTickets) {
+            ticketList.add(bugReport);
             return true;
         }
         return false;
