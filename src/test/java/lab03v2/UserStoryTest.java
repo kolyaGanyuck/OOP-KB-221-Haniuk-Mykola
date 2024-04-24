@@ -32,6 +32,6 @@ class UserStoryTest {
     }
     @Test
     void toStringUserStory(){
-        Assertions.assertEquals("[US 0] Створення профіля", story.toString());
+        Assertions.assertEquals("[US 1] Створення профіля", story.toString());
     }
 }

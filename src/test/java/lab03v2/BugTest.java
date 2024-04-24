@@ -14,7 +14,7 @@ class BugTest {
     void setUp() {
         UserStory story = new UserStory("Створення профіля", 1, new ArrayList<>());
         story.complete();
-        this.bug = Bug.createBug(1, "Bug1", 1, story);
+        this.bug = Bug.createBug( "Bug1", 1, story);
     }
     @Test
     void complete() {
@@ -24,6 +24,6 @@ class BugTest {
     }
     @Test
     void testToString() {
-        Assertions.assertEquals("[Bug 1] Bug1: [US 0] Створення профіля", bug.toString());
+        Assertions.assertEquals("[Bug 1] Bug1: [US 1] Створення профіля", bug.toString());
     }
 }

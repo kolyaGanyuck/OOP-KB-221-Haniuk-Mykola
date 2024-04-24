@@ -7,6 +7,13 @@ public class Ticket {
     protected static int id = 0;
     protected int currentId;
     private String name;
+
+    @Override
+    public String toString() {
+        return "[Ticket " + currentId + "] " + name
+                + ", estimate = " + estimate + ", isCompleted = " + isCompleted;
+    }
+
     private int estimate;
     private boolean isCompleted;
 
@@ -17,12 +24,15 @@ public class Ticket {
         this.estimate = estimate;
     }
 
+    Ticket() {
+
+    }
+
+    public boolean setCompleted() {
+        return isCompleted = true;
+    }
     public void complete() {
         isCompleted = true;
         System.out.println("Ticket with name " + name + " is completed");
-    }
-
-    Ticket(){
-
     }
 }

@@ -1,10 +1,11 @@
 package lab03v2;
 
+
 import lombok.Data;
 
 import java.util.List;
-
 @Data
+
 public class UserStory extends Ticket {
     protected static int userId = 0;
     private int currentUserId;
@@ -13,27 +14,28 @@ public class UserStory extends Ticket {
 
     UserStory(String name, int estimate, List<UserStory> dependencies) {
         super(name, estimate);
-        currentUserId = userId++;
+        currentUserId = userId + 1;
         userStoryComplete = false;
         this.dependencies = dependencies;
         this.dependencies.add(this);
     }
+
 
     @Override
     public void complete() {
         dependencies.get(0).completeUserStory();
         for (Ticket ticket : dependencies) {
             if (!ticket.isCompleted()) {
-                System.out.println("Not all user's dependencies are complete");
+                System.out.println("Не всі залежності завершені");
                 break;
             }
-            System.out.println("User with id " + userId + " complete dependency + " + ticket.getName());
+            System.out.println("Залежність з id [" + ticket.getCurrentId() + "] |" + ticket.getName() + "| завершена успішно ");
         }
         userStoryComplete = true;
     }
 
     public void completeUserStory() {
-        setCompleted(true);
+        setCompleted();
     }
 
     public List<UserStory> getListOfUserStories() {

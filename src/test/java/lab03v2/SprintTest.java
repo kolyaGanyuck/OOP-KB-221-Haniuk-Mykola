@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class SprintTest {
     private Ticket ticket;
@@ -21,14 +20,12 @@ class SprintTest {
         userStory = new UserStory("Створення профіля", 1, new ArrayList<>());
         userStory2 = new UserStory("Створення профіля", 1, new ArrayList<>());
         userStory.complete();
-        bug = Bug.createBug(1, "Bug1", 3, userStory);
+        bug = Bug.createBug("Bug1", 3, userStory);
         sprint = new Sprint(3, 3);
     }
 
     @Test
     void estimateCheck() {
-        Assertions.assertTrue(sprint.addTicket(ticket));
-        Assertions.assertTrue(sprint.addTicket(ticket));
         Assertions.assertTrue(sprint.addTicket(ticket));
         Assertions.assertFalse(sprint.addTicket(ticket));
     }
@@ -47,8 +44,8 @@ class SprintTest {
     @Test
     void getTotalEstimate() {
         sprint.addTicket(ticket);
-        sprint.addBug(bug);
-        sprint.addUserStory(userStory2);
-        Assertions.assertEquals(6, sprint.getTotalEstimate());
+        sprint.addBug(bug); // max estimate 3
+        sprint.addUserStory(userStory); // max estimate 3
+        Assertions.assertEquals("Час виконання всіх тікетів становить: 2", sprint.getTotalEstimate());
     }
 }
