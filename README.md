@@ -1,1 +1,1 @@
-<h1>Report of completing tasks on the discipline oObject-oriented programming</h1>
+<h1>Report of completing tasks on the discipline Object-oriented programming</h1>
